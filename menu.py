@@ -14,7 +14,7 @@ def listar_livros():
         print(livro)
 
 def emprestar():
-    titulo = ("Digite o título do livro que você deseja emprestar: ")
+    titulo = input ("Digite o título do livro que você deseja emprestar: ")
 
     for livro in livros:
         if livro[0] == titulo: 
