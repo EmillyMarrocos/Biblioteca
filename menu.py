@@ -3,29 +3,60 @@ from datetime import datetime
 livros = []
 
 def add_livros():
-    titulo = input("Título: ")
-    autor = input("Autor: ")
+ """Adicione um livro á biblioteca"""
+    titulo = input("Título: ").strip()
+if not titulo:
+ print("Erro: o título não pode estar vazio!")
+       return
+       
+       autor = input("Autor: ").strip()
+       if not autor:
+       print("Erro: o autor não pode estar vazio!" )
+       return 
 
     livros.append([titulo, autor, True])
-    print("Livro adicionado!")
+    print("Livro adicionado com sucesso!")
 
 def listar_livros():
-    for livro in livros:
-        print(livro)
+ """Lista todos os livros da bibliotica"""
+if not livros:
+ print("Nenhum livro cadastrados ainda.")
+return 
+    
+        print("\n===== LIVROS CADASTRADOS =====")
+for idx, livro in enumerate(livros, 1):
+ status = "Disponível" if livros [2] else "Emprestado"
+print(f"{idx}. {livro[0]} - {livro[1]} [{status}]")
+print()
 
 def emprestar():
-    titulo = input ("Digite o título do livro que você deseja emprestar: ")
+ """Empreste um livro da biblioteca"""
+    titulo = input ("Digite o título do livro que você deseja emprestar: ").strip()
 
     for livro in livros:
-        if livro[0] == titulo: 
+        if livro[0].lower() == titulo.lower(): 
             if livro[2] == True:
                 livro[2] = False
                 print("Livro emprestado com sucesso!")
-                return
-            else:
-                print("O livro já está emprestado!")
-                return
-    print("Livro não encontrado!")
+             return
+else:
+ print("O livro já está emprestado!" )
+return 
+print("Livro não encontrado!")
+                
+            def devolver():
+             """Devolver um livro emprestado"""
+             titulo = input("Digite o título do livro que vocÊ deseja devolver: " ).strip()
+                
+                for livro in livros:
+                 if livros [0].lower() == titulo.lower():
+                  if livro [2] = True
+
+try: 
+ data_emprestimo_str = input
+
+
+    
 
 def devolver():
     titulo = input("Digite o título do livro que você deseja devolver: ")
